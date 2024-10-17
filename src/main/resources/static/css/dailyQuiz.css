@@ -1,0 +1,165 @@
+/* 공통 레이아웃 */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: 'Arial', sans-serif;
+    height: 100vh;
+    margin: 0;
+    background-color: #fff;
+    color: #123;
+}
+
+@media (max-width: 600px) {
+    h1 {
+        font-size: 28px;
+        letter-spacing: 2px;
+    }
+}
+
+/* 게임 보드 */
+.game-board {
+    display: grid;
+    grid-template-rows: repeat(6, 1fr);
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+/* 각 줄의 입력 필드 */
+.guess-row {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+/* 각 글자 입력 필드 */
+.word-input {
+    width: 60px;
+    height: 60px;
+    font-size: 36px;
+    text-transform: uppercase;
+    text-align: center;
+    background-color: #ffffff;
+    border: 2px solid #d3d6da;
+    color: #000000;
+    border-radius: 5px;
+    outline: none;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.word-input:disabled {
+    background-color: #ffffff;
+    border: 2px solid #d3d6da;
+}
+
+/* 상태에 따른 배경색 변경 */
+.word-input.correct {
+    background-color: #6aaa64;
+    color: white;
+}
+
+.word-input.present {
+    background-color: #c9b458;
+    color: white;
+}
+
+.word-input.absent {
+    background-color: #787c7e;
+    color: white;
+}
+
+/* 키보드 레이아웃 */
+.game-keyboard {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.keyboard-line {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+}
+
+.keyboard-item {
+    width: 45px;
+    height: 60px;
+    font-size: 18px;
+    background-color: #ffffff; /* 기본 색상을 흰색으로 변경 */
+    color: #000000; /* 글자 색상을 검정으로 변경 */
+    border: 1px solid #d3d6da; /* 테두리 추가 */
+    border-radius: 5px;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.keyboard-item.correct {
+    background-color: #6aaa64;
+    color: white;
+    border-color: #6aaa64;
+}
+
+.keyboard-item.present {
+    background-color: #c9b458;
+    color: white;
+    border-color: #c9b458;
+}
+
+.keyboard-item.absent {
+    background-color: #787c7e;
+    color: white;
+    border-color: #787c7e;
+}
+
+.word-submit, .word-delete {
+    width: auto;
+    min-width: 65px;
+    padding: 0 10px;
+}
+
+.word-submit {
+    background-color: #538d4e;
+}
+
+.word-delete {
+    background-color: #d73a3a;
+}
+
+.game-hint {
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.game-hint-view {
+    background-color: #818384;
+    border: none;
+    padding: 10px 20px;
+    font-size: 18px;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.game-hint-view:hover {
+    background-color: #6e6e6f;
+}
+
+.hint-text {
+    margin-top: 15px;
+    padding: 15px;
+    background-color: #3a3a3c;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #fff;
+    text-align: center;
+    max-width: 300px;
+    word-wrap: break-word;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: opacity 0.3s ease;
+}
